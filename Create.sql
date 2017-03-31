@@ -1,3 +1,4 @@
+DROP TABLE Sprzedaz CASCADE CONSTRAINTS;
 DROP TABLE Pismo CASCADE CONSTRAINTS;
 DROP TABLE Tematyka CASCADE CONSTRAINTS;
 DROP TABLE Dodatek CASCADE CONSTRAINTS;
@@ -89,6 +90,19 @@ cena NUMBER(2,2) NOT NULL,
 
 CONSTRAINT pismo_dodatek_fk FOREIGN KEY(id_dodatku) REFERENCES dodatek(id_dodatku),
 CONSTRAINT pismo_tematyka_fk FOREIGN KEY(id_tematyki) REFERENCES tematyka(id_tematyki)
+);
+
+CREATE TABLE Sprzedaz (
+id_sprzedazy NUMBER NOT NULL CONSTRAINT sprzedarz_pk PRIMARY KEY,
+id_pisma NUMBER NOT NULL,
+id_salonu NUMBER NOT NULL,
+id_czasu NUMBER NOT NULL,
+ilosc_sprzedanych NUMBER NOT NULL,
+suma_zysku NUMBER NOT NULL,
+
+CONSTRAINT sprzedarz_pismo_fk FOREIGN KEY(id_pisma) REFERENCES Pismo(id_pisma),
+CONSTRAINT sprzedarz_salon_fk FOREIGN KEY(id_salonu) REFERENCES Salon(id_salonu),
+CONSTRAINT sprzedarz_czas_fk FOREIGN KEY(id_czasu) REFERENCES Czas(id_czasu)
 );
 
 
