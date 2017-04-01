@@ -14,12 +14,13 @@
 	<cstdlib>
 	<sstream>
 
-1491076033 source:c:\users\wojciech\documents\github\projekt-bd2\generator projekt\main.cpp
+1491082009 source:c:\users\wojciech\documents\github\projekt-bd2\generator projekt\main.cpp
 	<iostream>
 	"generate_lib.h"
 	<fstream>
+	<windows.h>
 
-1491076014 c:\users\wojciech\documents\github\projekt-bd2\generator projekt\generate_lib.h
+1491076117 c:\users\wojciech\documents\github\projekt-bd2\generator projekt\generate_lib.h
 	<cstdlib>
 	<sstream>
 	<climits>

@@ -53,8 +53,7 @@ string generate_date()
     else
         streamData << day;
 
-    string data = streamData.str();
-    return data;
+    return streamData.str();;
 }
 
 
@@ -87,8 +86,7 @@ string generate_date(int from_year, int to_year)
     else
         streamData << day;
 
-    string data = streamData.str();
-    return data;
+    return streamData.str();
 }
 
 string generate_street(string street)
@@ -130,8 +128,7 @@ string generate_name(string male_surname_end, string male_name_end, string femal
                           streamData << letter << female_name_end;
             }
 
-    string data = streamData.str();
-    return data;
+    return streamData.str();
 }
 
 long long generate_pesel()
