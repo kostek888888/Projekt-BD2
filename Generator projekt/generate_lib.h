@@ -59,13 +59,13 @@ string generate_date()
 }
 
 
-string generate_date(int od_rok, int do_rok)
+string generate_date(int from_year, int to_year)
 {
 
     stringstream streamData;
 
     ///year
-    streamData << (rand()%(do_rok-od_rok) )+od_rok << "-";
+    streamData << (rand()%(to_year-from_year) )+from_year << "-";
 
     ///if month <10 then month e.g. 02
     int month=(rand()%12)+1;
@@ -92,37 +92,22 @@ string generate_date(int od_rok, int do_rok)
     return data;
 }
 
-string generate_name(string name_end)
+string generate_name(string male_name_end, string female_name_end)
 {
 
     char letter = 0;
     stringstream streamData;
+    int gender = rand()%2;
 
-                          ///if name_end = ek
-                          ///name = letter + ek
-                          letter = (rand() % 25) +65;
-                          streamData << letter << name_end;
-
-
-    string data = streamData.str();
-    return data;
-}
-
-string generate_name(int sex_0_for_man_else_for_woman)
-{
-
-    char letter = 0;
-    stringstream streamData;
-
-                    if(sex_0_for_man_else_for_woman==0) ///M
+                    if(gender==0) ///M
                       {
                           letter = (rand() % 25) +65;
-                          streamData << letter << "mek";
+                          streamData << letter << male_name_end;
                       }
                       else   ///F
                       {
                           letter = (rand() % 25) +65;
-                          streamData<< letter << "mka";
+                          streamData<< letter << female_name_end;
                       }
 
     string data = streamData.str();
