@@ -40,12 +40,11 @@ void generuj_osoby(unsigned int ile)
        ofstream utworz_plik;
        utworz_plik.open(sciezka.c_str());
        utworz_plik.close();
-       fstream plik;
-       plik.open(sciezka.c_str(), std::ios::in | std::ios::out);
-       plik.close();
        generuj_osoby(p_ile);
     }
 }
+
+
 
 
 int main()
@@ -59,6 +58,9 @@ int main()
     cout << endl << "ile wpisow do tabeli Osoby chcesz wygenerowac: ";
     cin >> ile;
     generuj_osoby(ile);
+
+   }
+
 
    return 0;
 }
