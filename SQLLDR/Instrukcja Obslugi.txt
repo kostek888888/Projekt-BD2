@@ -1,3 +1,15 @@
+Mamy tabele:
+
+CREATE TABLE Osoby (
+id_osoby NUMBER CONSTRAINT osoby_pk PRIMARY KEY,
+imie VARCHAR2(25) NOT NULL,
+nazwisko VARCHAR(50) NOT NULL,
+data_ur DATE NOT NULL,
+pesel VARCHAR2(11) NULL CONSTRAINT os_pesel_uni UNIQUE,
+adres VARCHAR2(60) NOT NULL,
+telefon VARCHAR2(20) NOT NULL
+);
+
 1 Sworzyc plik kontrolny .ctl dla danej tabeli
 
 	1) LOAD DATA
@@ -15,8 +27,8 @@
 	4) jeśli nie wejdą do bazy i do badfile wejdą do tego pliku
 	5) REPLACE - wczytane dane zastąpią te wcześniejsze, możliwe są tez inne opcje, a potem do jakiej tabeli
 	6) jaki separator oddziela dane w pliku z danymi
-	7) zabezpieczenie przed pustymi kolumnami bo inaczej wywalały by błąd
-	8) Pola w danej tabeli koniecznie w takiej kolejności jak w insercie
+	7) zabezpieczenie przed pustymi wierszami bo inaczej wywalały by błąd
+	8) Pola w danej tabeli koniecznie w takiej kolejności jak w Create.sql, dla daty trzeba jeszcze podać format
 
 
 2 Sworzyc plik z danymi w formacie .csv
@@ -28,16 +40,16 @@
 	każdy atrybut tabeli rozdzielony przecinkiem i tak aby pasował do 1.8)
 
 3 Wprowadzić do bazy za pomocą sqlldr.exe
-		najlepiej skopiować sqlldr.exe do tego folderu w którym są pliki z danymi i ctl żeby się ścieżki zgadzały z 1.2), gdyby plik nie był w tym samym folderze trzeba by było podawać pełna ścieżkę do pliku z danymi w pliku .ctl
+		najlepiej skopiować sqlldr.exe do tego folderu w którym są pliki z danymi i .ctl żeby się ścieżki zgadzały z 1.2), gdyby plik nie był w tym samym folderze trzeba by było podawać pełna ścieżkę do pliku z danymi w pliku .ctl
 		u mnie sqlldr.exe był w "oraclexe\app\oracle\product\11.2.0\server\bin"
 		
 		odpalamy konsole i przechodzimy do folderu z plikiem sqlldr.exe i reszta plików i stamtąd wpisujemy
 		sqlldr userid=login/pass control=plik_kontrolny.ctl
 
 		gdzie
-		login/pass to login i hasło do bazy
+		login/pass to login i hasło do bazy jesli było ustawione
 		
-		jak wszystko pójdzie ok to wypisze
+		jak wszystko pójdzie ok to wypisze dużo razy
 		commit point reached... 
 		
 
