@@ -13,11 +13,11 @@ string pobierz_sciezke()
        string user_name = getenv("USERNAME");
 
        if(user_name=="Wojciech")
-       {
          stream << "C:\\Users\\" << user_name << "\\Documents\\Github\\Projekt-BD2\\SQLLDR\\";
-       }
+       else if(user_name=="koste")
+        stream << "C:\\Users\\koste\\OneDrive\\Informatyka\\Semestr 4\\Bazy Danych 2\\Projekt\\Projekt-BD2\\SQLLDR";
        else
-        stream <<"C:\\";
+        stream << "c:\\";
 
        return stream.str();
 }
