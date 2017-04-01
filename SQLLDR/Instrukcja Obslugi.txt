@@ -23,11 +23,11 @@ telefon VARCHAR2(20) NOT NULL
 
 	gdzie
 	2) plik z danymi
-	3) dane które będą błędne  nie wejdą do bazy tylko do tego pliku
+	3) dane które będą błędne nie wejdą do bazy tylko do tego pliku
 	4) jeśli nie wejdą do bazy i do badfile wejdą do tego pliku
 	5) REPLACE - wczytane dane zastąpią te wcześniejsze, możliwe są tez inne opcje, a potem do jakiej tabeli
 	6) jaki separator oddziela dane w pliku z danymi
-	7) zabezpieczenie przed pustymi wierszami bo inaczej wywalały by błąd
+	7) zabezpieczenie przed pustymi kolumnami bo inaczej wywalały by rekord do badfile
 	8) Pola w danej tabeli koniecznie w takiej kolejności jak w Create.sql, dla daty trzeba jeszcze podać format
 
 
@@ -37,7 +37,7 @@ telefon VARCHAR2(20) NOT NULL
 	1,Adam,Nowak,1982-02-01,82020105031,Krakowska 34,283472633
 	2,Adam,Nowak,1982-02-01,82020105023,Krakowska 33,282342633
 
-	każdy atrybut tabeli rozdzielony przecinkiem i tak aby pasował do 1.8)
+	każda kolumna tabeli rozdzielona przecinkiem i tak aby pasowała do 1.8)
 
 3 Wprowadzić do bazy za pomocą sqlldr.exe
 		najlepiej skopiować sqlldr.exe do tego folderu w którym są pliki z danymi i .ctl żeby się ścieżki zgadzały z 1.2), gdyby plik nie był w tym samym folderze trzeba by było podawać pełna ścieżkę do pliku z danymi w pliku .ctl
