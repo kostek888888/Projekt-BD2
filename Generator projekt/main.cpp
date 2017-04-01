@@ -46,8 +46,8 @@ void generuj_osoby(unsigned int ile)
     {
        for(unsigned int i=1; i<=ile; i++)
        {
-           fplik << i << "," << generate_name("mek","mka") << "," << generate_name("ski", "ska") << ",";
-           fplik << generate_date(1945,2000) << "," << generate_pesel() << "," << "Ul. " << generate_name("owska","owa") << " " << (rand()%99)+1 << ",";
+           fplik << i << "," << generate_name("mek","ski","mka","ska") << ",";
+           fplik << generate_date(1945,2000) << "," << generate_pesel() << "," << generate_street("owska") << ",";
            fplik << generate_phone_number() << endl;
        }
        fplik << endl << endl;
@@ -78,6 +78,7 @@ int main()
     cout << endl << "ile wpisow do tabeli Osoby chcesz wygenerowac: ";
     cin >> ile;
     generuj_osoby(ile);
+
 
    return 0;
 }

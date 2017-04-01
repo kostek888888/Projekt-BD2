@@ -32,7 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="generate.h" />
+		<Unit filename="generate_lib.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

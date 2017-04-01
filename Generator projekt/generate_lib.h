@@ -91,7 +91,20 @@ string generate_date(int from_year, int to_year)
     return data;
 }
 
-string generate_name(string male_name_end, string female_name_end)
+string generate_street(string street)
+{
+
+    char letter = 0;
+    stringstream streamData;
+
+    letter = (rand() % 25) +65;
+    streamData << "Ul. " << letter << street << " ";
+    streamData << (rand()%99)+1;
+    string data = streamData.str();
+    return data;
+}
+
+string generate_name(string male_surname_end, string male_name_end, string female_surname_end, string female_name_end)
 {
 
     char letter = 0;
@@ -101,12 +114,20 @@ string generate_name(string male_name_end, string female_name_end)
             if(gender==0) ///M
             {
                 letter = (rand() % 25) +65;
+                          streamData << letter << male_surname_end;
+
+                streamData << ",";
+                letter = (rand() % 25) +65;
                           streamData << letter << male_name_end;
             }
             else   ///F
             {
                 letter = (rand() % 25) +65;
-                streamData<< letter << female_name_end;
+                streamData<< letter << female_surname_end;
+
+                streamData << ",";
+                letter = (rand() % 25) +65;
+                          streamData << letter << female_name_end;
             }
 
     string data = streamData.str();
