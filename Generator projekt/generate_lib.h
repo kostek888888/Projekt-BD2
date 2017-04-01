@@ -1,7 +1,7 @@
 /*
 ################################################################################
 #                                                                              #
-#    Library to generation values for databases                                #
+#    Library to generate values for databases                                  #
 #                                                                              #
 #    Author: https://github.com/wojtek9502/                                    #
 #    Email: wojtek.klusek2@gmail.com                                           #
