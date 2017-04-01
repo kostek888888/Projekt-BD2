@@ -10,8 +10,15 @@ using namespace std;
 string pobierz_sciezke()
 {
        stringstream stream;
+       string user_name = getenv("USERNAME");
 
-       stream << "C:\\Users\\" << getenv("USERNAME") << "\\Documents\\Github\\Projekt-BD2\\SQLLDR\\";
+       if(user_name=="Wojciech")
+       {
+         stream << "C:\\Users\\" << user_name << "\\Documents\\Github\\Projekt-BD2\\SQLLDR\\";
+       }
+       else
+        stream <<"C:\\";
+
        return stream.str();
 }
 
@@ -59,7 +66,6 @@ int main()
     cin >> ile;
     generuj_osoby(ile);
 
-   }
 
 
    return 0;
