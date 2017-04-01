@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1491062990 source:c:\users\wojciech\desktop\generator projekt\main.cpp
+	<iostream>
+	"generate_lib.h"
+	<ctime>
+
+1491062698 c:\users\wojciech\desktop\generator projekt\generate.h
+	<ctime>
+	<cstdlib>
+	<sstream>
+
+1491062979 c:\users\wojciech\desktop\generator projekt\generate_lib.h
+	<ctime>
+	<cstdlib>
+	<sstream>
+
+1491064725 source:c:\users\wojciech\documents\github\projekt-bd2\generator projekt\main.cpp
+	<iostream>
+	"generate_lib.h"
+
+1491064852 c:\users\wojciech\documents\github\projekt-bd2\generator projekt\generate_lib.h
+	<cstdlib>
+	<sstream>
+	<ctime>
+
