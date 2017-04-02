@@ -51,13 +51,14 @@ kwartal NUMBER(1) NOT NULL
 CREATE TABLE Miasto (
 id_miasta NUMBER NOT NULL CONSTRAINT miasto_pk PRIMARY KEY,
 nazwa VARCHAR2(50) NOT NULL,
-wojewodztwo VARCHAR2(40) NOT NULL,
+kraj VARCHAR2(40) NOT NULL,
 liczba_mieszkancow NUMBER(7)
 );
 
 CREATE TABLE Salon(
 id_salonu NUMBER NOT NULL CONSTRAINT salon_pk PRIMARY KEY,
 id_miasta NUMBER NOT NULL,
+nazwa VARCHAR2(60) NOT NULL,
 adres VARCHAR2(30) NOT NULL,
 powierzchnia NUMBER(4) NOT NULL,
 obrot_miesieczny NUMBER(7) NOT NULL,

@@ -1,0 +1,7 @@
+LOAD DATA
+INFILE 'czas.csv'
+BADFILE 'czas.bad'
+DISCARDFILE 'czas.dsc'
+REPLACE INTO TABLE Czas 
+FIELDS TERMINATED BY "," TRAILING NULLCOLS
+( id_czasu, data DATE "YYYY-MM-DD", kwartal )

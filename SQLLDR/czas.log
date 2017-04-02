@@ -3,10 +3,10 @@ SQL*Loader: Release 11.2.0.2.0 - Production on N Kwi 2 17:52:50 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
-Control File:   osoby.ctl
-Data File:      osoby.csv
-  Bad File:     osoby.bad
-  Discard File: osoby.dsc 
+Control File:   czas.ctl
+Data File:      czas.csv
+  Bad File:     czas.bad
+  Discard File: czas.dsc 
  (Allow all discards)
 
 Number to load: ALL
@@ -16,38 +16,34 @@ Bind array:     64 rows, maximum of 256000 bytes
 Continuation:    none specified
 Path used:      Conventional
 
-Table OSOBY, loaded from every logical record.
+Table CZAS, loaded from every logical record.
 Insert option in effect for this table: REPLACE
 TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID_OSOBY                            FIRST     *   ,       CHARACTER            
-IMIE                                 NEXT     *   ,       CHARACTER            
-NAZWISKO                             NEXT     *   ,       CHARACTER            
-DATA_UR                              NEXT     *   ,       DATE YYYY-MM-DD      
-PESEL                                NEXT     *   ,       CHARACTER            
-ADRES                                NEXT     *   ,       CHARACTER            
-TELEFON                              NEXT     *   ,       CHARACTER            
+ID_CZASU                            FIRST     *   ,       CHARACTER            
+DATA                                 NEXT     *   ,       DATE YYYY-MM-DD      
+KWARTAL                              NEXT     *   ,       CHARACTER            
 
 
-Table OSOBY:
-  100 Rows successfully loaded.
+Table CZAS:
+  300 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
 
 
-Space allocated for bind array:                 115584 bytes(64 rows)
+Space allocated for bind array:                  49536 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:           100
+Total logical records read:           300
 Total logical records rejected:         0
 Total logical records discarded:        0
 
 Run began on N  Kwi 02 17:52:50 2017
 Run ended on N  Kwi 02 17:52:50 2017
 
-Elapsed time was:     00:00:00.05
-CPU time was:         00:00:00.02
+Elapsed time was:     00:00:00.09
+CPU time was:         00:00:00.04

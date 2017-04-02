@@ -91,15 +91,29 @@ string generate_date(int from_year, int to_year)
 
 
 
-string generate_street(string street)
+
+
+string generate_address(string street_name_end)
 {
 
     char letter = 0;
     stringstream streamData;
 
     letter = (rand() % 25) +65;
-    streamData << "Ul. " << letter << street << " ";
+    streamData << "Ul. " << letter << street_name_end << " ";
     streamData << (rand()%99)+1;
+    string data = streamData.str();
+    return data;
+}
+
+string generate_city_name(string city_name_end)
+{
+
+    char letter = 0;
+    stringstream streamData;
+
+    letter = (rand() % 25) +65;
+    streamData << letter << city_name_end << " ";
     string data = streamData.str();
     return data;
 }
@@ -133,6 +147,19 @@ string generate_name(string male_surname_end, string male_name_end, string femal
     return streamData.str();
 }
 
+string generate_salon_name(string name_end)
+{
+    char letter = 0;
+    stringstream streamData;
+
+        streamData << "Salon Prasowy ";
+        letter = (rand() % 25) +65;
+        streamData << letter << name_end;
+
+
+    return streamData.str();
+}
+
 long long generate_pesel()
 {
     int p1;
@@ -160,9 +187,7 @@ long long generate_phone_number()
     n3 *= n1;
     n3 += n2;
 
-
     return n3;
-
-
-
 }
+
+
