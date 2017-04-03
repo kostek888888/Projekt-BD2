@@ -26,3 +26,15 @@
 	<climits>
 	<ctime>
 
+1491217919 source:c:\users\koste\onedrive\informatyka\semestr 4\bazy danych 2\projekt\projekt-bd2\generator projekt\main.cpp
+	<iostream>
+	"generate_lib.h"
+	<fstream>
+	<sstream>
+
+1491216642 c:\users\koste\onedrive\informatyka\semestr 4\bazy danych 2\projekt\projekt-bd2\generator projekt\generate_lib.h
+	<cstdlib>
+	<sstream>
+	<climits>
+	<ctime>
+
