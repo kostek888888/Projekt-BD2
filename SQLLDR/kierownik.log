@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 11.2.0.2.0 - Production on N Kwi 2 17:52:50 2017
+SQL*Loader: Release 11.2.0.2.0 - Production on Pn Kwi 3 20:00:15 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
@@ -30,7 +30,7 @@ PENSJA                               NEXT     *   ,       CHARACTER
 
 
 Table KIEROWNIK:
-  25 Rows successfully loaded.
+  10 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
@@ -40,12 +40,12 @@ Space allocated for bind array:                  82560 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:            25
+Total logical records read:            10
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on N  Kwi 02 17:52:50 2017
-Run ended on N  Kwi 02 17:52:50 2017
+Run began on Pn Kwi 03 20:00:15 2017
+Run ended on Pn Kwi 03 20:00:15 2017
 
-Elapsed time was:     00:00:00.05
-CPU time was:         00:00:00.02
+Elapsed time was:     00:00:00.07
+CPU time was:         00:00:00.03

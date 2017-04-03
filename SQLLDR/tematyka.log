@@ -3,10 +3,10 @@ SQL*Loader: Release 11.2.0.2.0 - Production on Pn Kwi 3 20:00:15 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
-Control File:   salon.ctl
-Data File:      salon.csv
-  Bad File:     salon.bad
-  Discard File: salon.dsc 
+Control File:   tematyka.ctl
+Data File:      tematyka.csv
+  Bad File:     tematyka.bad
+  Discard File: tematyka.dsc 
  (Allow all discards)
 
 Number to load: ALL
@@ -16,37 +16,34 @@ Bind array:     64 rows, maximum of 256000 bytes
 Continuation:    none specified
 Path used:      Conventional
 
-Table SALON, loaded from every logical record.
+Table TEMATYKA, loaded from every logical record.
 Insert option in effect for this table: REPLACE
 TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID_SALONU                           FIRST     *   ,       CHARACTER            
-ID_MIASTA                            NEXT     *   ,       CHARACTER            
+ID_TEMATYKI                         FIRST     *   ,       CHARACTER            
 NAZWA                                NEXT     *   ,       CHARACTER            
-ADRES                                NEXT     *   ,       CHARACTER            
-POWIERZCHNIA                         NEXT     *   ,       CHARACTER            
-OBROT_MIESIECZNY                     NEXT     *   ,       CHARACTER            
+OPIS                                 NEXT     *   ,       CHARACTER            
 
 
-Table SALON:
-  30 Rows successfully loaded.
+Table TEMATYKA:
+  10 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
 
 
-Space allocated for bind array:                  99072 bytes(64 rows)
+Space allocated for bind array:                  49536 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:            30
+Total logical records read:            10
 Total logical records rejected:         0
 Total logical records discarded:        0
 
 Run began on Pn Kwi 03 20:00:15 2017
 Run ended on Pn Kwi 03 20:00:15 2017
 
-Elapsed time was:     00:00:00.09
-CPU time was:         00:00:00.03
+Elapsed time was:     00:00:00.05
+CPU time was:         00:00:00.01

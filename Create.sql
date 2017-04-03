@@ -76,18 +76,17 @@ naklad NUMBER(7) NOT NULL
 CREATE TABLE Tematyka (
 id_tematyki NUMBER NOT NULL CONSTRAINT tematyka_pk PRIMARY KEY,
 nazwa VARCHAR2(50) NOT NULL,
-dziedzina VARCHAR2(50) NOT NULL,
 opis varchar2(200)
 );
 
 CREATE TABLE Pismo (
 id_pisma NUMBER NOT NULL CONSTRAINT pismo_pk PRIMARY KEY,
-id_dodatku NUMBER NOT NULL,
+id_dodatku NUMBER,
 id_tematyki number NOT NULL,
 okres_wydawania VARCHAR2(30) NOT NULL,  --np tygodnik itp
 nazwa VARCHAR(40) NOT null,
 naklad NUMBER(7) NOT NULL,
-cena NUMBER(2,2) NOT NULL,
+cena NUMBER(3) NOT NULL,
 
 CONSTRAINT pismo_dodatek_fk FOREIGN KEY(id_dodatku) REFERENCES dodatek(id_dodatku),
 CONSTRAINT pismo_tematyka_fk FOREIGN KEY(id_tematyki) REFERENCES tematyka(id_tematyki)
@@ -98,6 +97,7 @@ id_sprzedazy NUMBER NOT NULL CONSTRAINT sprzedarz_pk PRIMARY KEY,
 id_pisma NUMBER NOT NULL,
 id_salonu NUMBER NOT NULL,
 id_czasu NUMBER NOT NULL,
+id_sprzedawcy NUMBER NOT NULL,
 ilosc_sprzedanych NUMBER NOT NULL,
 suma_zysku NUMBER NOT NULL,
 

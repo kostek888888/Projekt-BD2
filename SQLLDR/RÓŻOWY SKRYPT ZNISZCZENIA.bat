@@ -10,14 +10,17 @@
 @echo podaj haslo do bazy
 @set /p haslo=">> "
 
-@echo %login%
-@echo %haslo%
+
 sqlldr userid=%login%/%haslo% control=osoby.ctl
 sqlldr userid=%login%/%haslo% control=kierownik.ctl
 sqlldr userid=%login%/%haslo% control=sprzedawca.ctl
 sqlldr userid=%login%/%haslo% control=czas.ctl
 sqlldr userid=%login%/%haslo% control=miasto.ctl
 sqlldr userid=%login%/%haslo% control=salon.ctl
+sqlldr userid=%login%/%haslo% control=tematyka.ctl
+sqlldr userid=%login%/%haslo% control=dodatek.ctl
+sqlldr userid=%login%/%haslo% control=pismo.ctl
+sqlldr userid=%login%/%haslo% control=sprzedaz.ctl
 
 @pause
 @exit
