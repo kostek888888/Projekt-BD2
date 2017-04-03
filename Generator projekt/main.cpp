@@ -15,7 +15,7 @@ string pobierz_sciezke()
        if(user_name=="Wojciech")
          stream << "C:\\Users\\" << user_name << "\\Documents\\Github\\Projekt-BD2\\SQLLDR\\";
        else if(user_name=="koste")
-        tream << "C:\\Users\\koste\\OneDrive\\Informatyka\\Semestr 4\\Bazy Danych 2\\Projekt\\Projekt-BD2\\SQLLDR";
+        stream << "C:\\Users\\koste\\OneDrive\\Informatyka\\Semestr 4\\Bazy Danych 2\\Projekt\\Projekt-BD2\\SQLLDR\\";
         else
         stream << "C:\\";
 
