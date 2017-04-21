@@ -34,12 +34,9 @@ CONSTRAINT dzien_rok_fk FOREIGN KEY(id_roku) REFERENCES rok(id_roku),
 CREATE TABLE Dzien (
 id_dnia NUMBER NOT NULL CONSTRAINT dzien_pk PRIMARY KEY,
 id miesiaca NUMBER NOT NULL,
-id_roku NUMBER NOT NULL,
 dzien NUMBER,
 
-CONSTRAINT dzien_miesiac_fk FOREIGN KEY(id_miesiaca) REFERENCES miesiac(id_miesiaca),
-CONSTRAINT dzien_rok_fk FOREIGN KEY(id_roku) REFERENCES miesiac(id_roku)
-
+CONSTRAINT dzien_miesiac_fk FOREIGN KEY(id_miesiaca) REFERENCES miesiac(id_miesiaca)
 );
 
 CREATE TABLE Miasto (
@@ -70,7 +67,6 @@ opis varchar2(200)
 
 CREATE TABLE Pismo (
 id_pisma NUMBER NOT NULL CONSTRAINT pismo_pk PRIMARY KEY,
-id_dodatku NUMBER,
 id_tematyki number NOT NULL,
 okres_wydawania VARCHAR2(30) NOT NULL,  --np tygodnik itp
 nazwa VARCHAR(40) NOT null,
@@ -98,7 +94,7 @@ CREATE TABLE Sprzedaz (
 id_sprzedazy NUMBER NOT NULL CONSTRAINT sprzedarz_pk PRIMARY KEY,
 id_pisma NUMBER NOT NULL,
 id_salonu NUMBER NOT NULL,
-id_czasu NUMBER NOT NULL,
+id_dnia NUMBER NOT NULL,
 id_sprzedawcy NUMBER NOT NULL,
 id_paragonu NUMBER NOT NULL
 suma_zysku NUMBER NOT NULL,
