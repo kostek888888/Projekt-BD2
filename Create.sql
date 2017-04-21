@@ -15,29 +15,34 @@ CREATE TABLE Sprzedawca (
 id_sprzedawcy NUMBER CONSTRAINT Sprzedawca PRIMARY KEY,
 data_zatrudnienia DATE NOT NULL,
 data_zwolnienia DATE,
-pensja NUMBER(6) NOT NULL,
+pensja NUMBER(6) NOT NULL
 );
+
 
 CREATE TABLE Rok (
 id_roku NUMBER NOT NULL CONSTRAINT rok_pk PRIMARY KEY,
 rok NUMBER NOT NULL
 );
 
+
+
 CREATE TABLE Miesiac (
 id_miesiaca NUMBER NOT NULL CONSTRAINT miesiac_pk PRIMARY KEY,
 id_roku NUMBER NOT NULL,
 miesiac NUMBER NOT NULL,
 
-CONSTRAINT dzien_rok_fk FOREIGN KEY(id_roku) REFERENCES rok(id_roku),
+CONSTRAINT dzien_rok_fk FOREIGN KEY(id_roku) REFERENCES rok(id_roku)
 );
+
 
 CREATE TABLE Dzien (
 id_dnia NUMBER NOT NULL CONSTRAINT dzien_pk PRIMARY KEY,
-id miesiaca NUMBER NOT NULL,
+id_miesiaca NUMBER NOT NULL,
 dzien NUMBER,
 
 CONSTRAINT dzien_miesiac_fk FOREIGN KEY(id_miesiaca) REFERENCES miesiac(id_miesiaca)
 );
+
 
 CREATE TABLE Miasto (
 id_miasta NUMBER NOT NULL CONSTRAINT miasto_pk PRIMARY KEY,
@@ -45,6 +50,7 @@ nazwa VARCHAR2(50) NOT NULL,
 kraj VARCHAR2(40) NOT NULL,
 liczba_mieszkancow NUMBER(7)
 );
+
 
 CREATE TABLE Salon(
 id_salonu NUMBER NOT NULL CONSTRAINT salon_pk PRIMARY KEY,
@@ -56,7 +62,6 @@ obrot_miesieczny NUMBER(7) NOT NULL,
 
 CONSTRAINT salon_miasto_fk FOREIGN KEY(id_miasta) REFERENCES miasto(id_miasta)
 );
-
 
 
 CREATE TABLE Tematyka (
@@ -73,7 +78,6 @@ nazwa VARCHAR(40) NOT null,
 naklad NUMBER(7) NOT NULL,
 cena NUMBER(3) NOT NULL,
 
-CONSTRAINT pismo_dodatek_fk FOREIGN KEY(id_dodatku) REFERENCES dodatek(id_dodatku),
 CONSTRAINT pismo_tematyka_fk FOREIGN KEY(id_tematyki) REFERENCES tematyka(id_tematyki)
 );
 
@@ -96,12 +100,14 @@ id_pisma NUMBER NOT NULL,
 id_salonu NUMBER NOT NULL,
 id_dnia NUMBER NOT NULL,
 id_sprzedawcy NUMBER NOT NULL,
-id_paragonu NUMBER NOT NULL
+id_paragonu NUMBER NOT NULL,
 suma_zysku NUMBER NOT NULL,
 
-CONSTRAINT sprzedarz_pismo_fk FOREIGN KEY(id_pisma) REFERENCES Pismo(id_pisma),
-CONSTRAINT sprzedarz_salon_fk FOREIGN KEY(id_salonu) REFERENCES Salon(id_salonu),
-CONSTRAINT sprzedarz_dzien_fk FOREIGN KEY(id_dnia) REFERENCES Dzien(id_dnia),
+CONSTRAINT sprzedaz_pismo_fk FOREIGN KEY(id_pisma) REFERENCES Pismo(id_pisma),
+CONSTRAINT sprzedaz_salon_fk FOREIGN KEY(id_salonu) REFERENCES Salon(id_salonu),
+CONSTRAINT sprzedaz_dzien_fk FOREIGN KEY(id_dnia) REFERENCES Dzien(id_dnia),
+CONSTRAINT sprzedaz_sprzedawca_fk FOREIGN KEY(id_sprzedawcy) REFERENCES Sprzedawca(id_sprzedawcy),
+CONSTRAINT sprzedaz_paragon_fk FOREIGN KEY(id_paragonu) REFERENCES Paragon(id_paragonu)
 
 );
 
