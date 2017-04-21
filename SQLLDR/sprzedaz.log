@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 11.2.0.2.0 - Production on Pn Kwi 3 20:00:16 2017
+SQL*Loader: Release 11.2.0.2.0 - Production on Pt Kwi 21 21:22:31 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
@@ -25,14 +25,14 @@ TRAILING NULLCOLS option in effect
 ID_SPRZEDAZY                        FIRST     *   ,       CHARACTER            
 ID_PISMA                             NEXT     *   ,       CHARACTER            
 ID_SALONU                            NEXT     *   ,       CHARACTER            
-ID_CZASU                             NEXT     *   ,       CHARACTER            
+ID_DNIA                              NEXT     *   ,       CHARACTER            
 ID_SPRZEDAWCY                        NEXT     *   ,       CHARACTER            
-ILOSC_SPRZEDANYCH                    NEXT     *   ,       CHARACTER            
+ID_PARAGONU                          NEXT     *   ,       CHARACTER            
 SUMA_ZYSKU                           NEXT     *   ,       CHARACTER            
 
 
 Table SPRZEDAZ:
-  5010 Rows successfully loaded.
+  10080 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
@@ -42,12 +42,12 @@ Space allocated for bind array:                 115584 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:          5010
+Total logical records read:         10080
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Pn Kwi 03 20:00:16 2017
-Run ended on Pn Kwi 03 20:00:16 2017
+Run began on Pt Kwi 21 21:22:31 2017
+Run ended on Pt Kwi 21 21:22:31 2017
 
-Elapsed time was:     00:00:00.12
-CPU time was:         00:00:00.03
+Elapsed time was:     00:00:00.25
+CPU time was:         00:00:00.05

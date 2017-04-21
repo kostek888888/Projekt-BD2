@@ -252,7 +252,7 @@ void generuj_pisma(unsigned int l_pism, int l_tematyk)
        ///pisma bez dodatkow
         for(unsigned int i=0; i<=l_pism; i++)
        {
-            ///id pisma, id_dodatku losowane z puli id_dodatk�w, id_tematyki
+            ///id pisma, id_dodatku losowane z puli id_dodatków, id_tematyki
            fplik << i+1 << "," << (rand()%l_tematyk)+1 << ",";
 
            ///okres wydawania
@@ -292,6 +292,50 @@ void generuj_pisma(unsigned int l_pism, int l_tematyk)
 }
 
 
+int generuj_platnosci()
+{
+    int l_rodzajow_platnosci=2;   ///gotowką, kartą
+    string sciezka = pobierz_sciezke() + "platnosci.csv";
+    fstream fplik;
+    string rodzaje_platnosci[] = {"Platnosc karta","Platnosc gotowka"};
+    fplik.open(sciezka.c_str(),ios::in | ios::out | ios::trunc);
+    if(fplik.good()==true)
+    {
+       for(unsigned int i=0; i<l_rodzajow_platnosci; i++)
+       {
+           fplik << i+1 << ",";
+           fplik << rodzaje_platnosci[i];
+
+           fplik << endl; ///koniec rekordu
+       }
+       cout << "Dane wygenerowane do pliku " << sciezka.c_str() << endl;
+       fplik.close();
+    }
+    return l_rodzajow_platnosci;
+}
+
+int generuj_paragony(int ile_paragonow, int l_platnosci)
+{
+    string sciezka = pobierz_sciezke() + "paragony.csv";
+    fstream fplik;
+    fplik.open(sciezka.c_str(),ios::in | ios::out | ios::trunc);
+    if(fplik.good()==true)
+    {
+       for(unsigned int i=0; i<ile_paragonow; i++)
+       {
+           fplik << i+1 << ",";    ///id_paragonu
+           fplik << (rand()&l_platnosci-1)+1 << ",";   ///id_platnosci
+           fplik << ( (rand()%10)+1 )*8;  ///do zaplaty
+
+
+           fplik << endl; ///koniec rekordu
+       }
+       cout << "Dane wygenerowane do pliku " << sciezka.c_str() << endl;
+       fplik.close();
+    }
+    return ile_paragonow;
+}
+
 unsigned int generuj_sprzedaz(unsigned int l_pism, unsigned int l_salonow, unsigned int l_dni, int l_paragonow, unsigned int l_sprzedawcow)
 {
     string sciezka = pobierz_sciezke() + "sprzedaz.csv";
@@ -319,7 +363,7 @@ unsigned int generuj_sprzedaz(unsigned int l_pism, unsigned int l_salonow, unsig
 
                ///suma zysku
                ///tu poki co jakas wartosc na lewo, ale przydaloby sie wejsc do pliku pismo.csv i odczytac cene pisma o podanym id
-               fplik << ((rand()%10)+1)*9 << ","; /// id_paragonu
+               fplik << ((rand()%36)+9) << ","; /// suma_zysku
 
 
 
@@ -333,11 +377,10 @@ unsigned int generuj_sprzedaz(unsigned int l_pism, unsigned int l_salonow, unsig
     return i*j;
 }
 
-
 void sprawdzenie_czy_pliki_zamkniete()
 {
-    string nazwy_plikow[] = {"rok.csv","miesiac.csv","dzien.csv","miasto.csv","salon.csv","sprzedawca.csv","tematyka.csv","pismo.csv", "sprzedaz.csv"};
-    for(int i=0; i<9; i++)
+    string nazwy_plikow[] = {"platnosci.csv","paragony.csv","rok.csv","miesiac.csv","dzien.csv","miasto.csv","salon.csv","sprzedawca.csv","tematyka.csv","pismo.csv", "sprzedaz.csv"};
+    for(int i=0; i<11; i++)
     {
             fstream fplik;
             string sciezka = pobierz_sciezke() + nazwy_plikow[i];
@@ -359,7 +402,7 @@ int main()
     sprawdzenie_czy_pliki_zamkniete();
     srand(time(NULL));
 
-    cout << "dane beda zapisywane w " << pobierz_sciezke() << endl;
+    cout << "dane beda zapisywane w " << pobierz_sciezke() << endl << endl;
 
     int ile_sprzedawcow = 50;
     int ile_zwolnionych_sprz = ile_sprzedawcow/4;
@@ -379,8 +422,11 @@ int main()
     int l_tematyk = generuj_tematyke();
     generuj_pisma(l_pism,l_tematyk);
 
+    int l_platnosci = generuj_platnosci();
+    int l_paragonow = generuj_paragony(2000,l_platnosci);
 
-    unsigned int ile = generuj_sprzedaz(l_pism,l_salonow,ile_dni,50,ile_sprzedawcow);
+
+    unsigned int ile = generuj_sprzedaz(l_pism,l_salonow,ile_dni,l_paragonow,ile_sprzedawcow);
 
     cout << endl << endl << "w tabeli faktow jest " <<  ile << " wpisow" << endl << "gotowe" << endl;
 

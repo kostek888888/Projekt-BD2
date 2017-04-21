@@ -1,12 +1,12 @@
 
-SQL*Loader: Release 11.2.0.2.0 - Production on Pt Kwi 21 21:22:30 2017
+SQL*Loader: Release 11.2.0.2.0 - Production on Pt Kwi 21 21:22:31 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
-Control File:   tematyka.ctl
-Data File:      tematyka.csv
-  Bad File:     tematyka.bad
-  Discard File: tematyka.dsc 
+Control File:   paragony.ctl
+Data File:      paragony.csv
+  Bad File:     paragony.bad
+  Discard File: paragony.dsc 
  (Allow all discards)
 
 Number to load: ALL
@@ -16,19 +16,19 @@ Bind array:     64 rows, maximum of 256000 bytes
 Continuation:    none specified
 Path used:      Conventional
 
-Table TEMATYKA, loaded from every logical record.
+Table PARAGONY, loaded from every logical record.
 Insert option in effect for this table: REPLACE
 TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID_TEMATYKI                         FIRST     *   ,       CHARACTER            
-NAZWA                                NEXT     *   ,       CHARACTER            
-OPIS                                 NEXT     *   ,       CHARACTER            
+ID_PARAGONU                         FIRST     *   ,       CHARACTER            
+ID_PLATNOSCI                         NEXT     *   ,       CHARACTER            
+DO_ZAPLATY                           NEXT     *   ,       CHARACTER            
 
 
-Table TEMATYKA:
-  11 Rows successfully loaded.
+Table PARAGONY:
+  2000 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
@@ -38,12 +38,12 @@ Space allocated for bind array:                  49536 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:            11
+Total logical records read:          2000
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Pt Kwi 21 21:22:30 2017
-Run ended on Pt Kwi 21 21:22:30 2017
+Run began on Pt Kwi 21 21:22:31 2017
+Run ended on Pt Kwi 21 21:22:31 2017
 
-Elapsed time was:     00:00:00.05
-CPU time was:         00:00:00.01
+Elapsed time was:     00:00:00.10
+CPU time was:         00:00:00.03

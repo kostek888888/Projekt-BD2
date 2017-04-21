@@ -11,16 +11,28 @@
 @set /p haslo=">> "
 
 
-sqlldr userid=%login%/%haslo% control=osoby.ctl
-sqlldr userid=%login%/%haslo% control=kierownik.ctl
+
 sqlldr userid=%login%/%haslo% control=sprzedawca.ctl
-sqlldr userid=%login%/%haslo% control=czas.ctl
+
+sqlldr userid=%login%/%haslo% control=tematyka.ctl
+sqlldr userid=%login%/%haslo% control=pismo.ctl
+
+
+sqlldr userid=%login%/%haslo% control=rok.ctl
+sqlldr userid=%login%/%haslo% control=miesiac.ctl
+sqlldr userid=%login%/%haslo% control=dzien.ctl
+
+
 sqlldr userid=%login%/%haslo% control=miasto.ctl
 sqlldr userid=%login%/%haslo% control=salon.ctl
-sqlldr userid=%login%/%haslo% control=tematyka.ctl
-sqlldr userid=%login%/%haslo% control=dodatek.ctl
-sqlldr userid=%login%/%haslo% control=pismo.ctl
+
+
+sqlldr userid=%login%/%haslo% control=platnosci.ctl
+sqlldr userid=%login%/%haslo% control=paragony.ctl
+
 sqlldr userid=%login%/%haslo% control=sprzedaz.ctl
+
+
 
 @pause
 @exit

@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 11.2.0.2.0 - Production on Pn Kwi 3 20:00:16 2017
+SQL*Loader: Release 11.2.0.2.0 - Production on Pt Kwi 21 21:22:30 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
@@ -23,7 +23,6 @@ TRAILING NULLCOLS option in effect
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
 ID_PISMA                            FIRST     *   ,       CHARACTER            
-ID_DODATKU                           NEXT     *   ,       CHARACTER            
 ID_TEMATYKI                          NEXT     *   ,       CHARACTER            
 OKRES_WYDAWANIA                      NEXT     *   ,       CHARACTER            
 NAZWA                                NEXT     *   ,       CHARACTER            
@@ -32,22 +31,22 @@ CENA                                 NEXT     *   ,       CHARACTER
 
 
 Table PISMO:
-  10 Rows successfully loaded.
+  21 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
 
 
-Space allocated for bind array:                 115584 bytes(64 rows)
+Space allocated for bind array:                  99072 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:            10
+Total logical records read:            21
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Pn Kwi 03 20:00:16 2017
-Run ended on Pn Kwi 03 20:00:16 2017
+Run began on Pt Kwi 21 21:22:30 2017
+Run ended on Pt Kwi 21 21:22:30 2017
 
-Elapsed time was:     00:00:00.11
-CPU time was:         00:00:00.06
+Elapsed time was:     00:00:00.04
+CPU time was:         00:00:00.01

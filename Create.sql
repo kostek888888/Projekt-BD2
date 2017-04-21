@@ -1,5 +1,5 @@
 DROP TABLE Sprzedaz CASCADE CONSTRAINTS;
-DROP TABLE Paragon CASCADE CONSTRAINTS;
+DROP TABLE Paragony CASCADE CONSTRAINTS;
 DROP TABLE Platnosci CASCADE CONSTRAINTS;
 DROP TABLE Pismo CASCADE CONSTRAINTS;
 DROP TABLE Tematyka CASCADE CONSTRAINTS;
@@ -9,6 +9,7 @@ DROP TABLE Dzien CASCADE CONSTRAINTS;
 DROP TABLE Miesiac CASCADE CONSTRAINTS;
 DROP TABLE Rok CASCADE CONSTRAINTS;
 DROP TABLE Sprzedawca CASCADE CONSTRAINTS;
+
 
 
 CREATE TABLE Sprzedawca (
@@ -86,7 +87,7 @@ id_platnosci NUMBER NOT NULL CONSTRAINT platnosci_pk PRIMARY KEY,
 nazwa VARCHAR2(50)
 );
 
-CREATE TABLE Paragon (
+CREATE TABLE Paragony (
 id_paragonu NUMBER NOT NULL CONSTRAINT paragon_pk PRIMARY KEY,
 id_platnosci NUMBER NOT NULL,
 do_zaplaty NUMBER,
@@ -107,7 +108,22 @@ CONSTRAINT sprzedaz_pismo_fk FOREIGN KEY(id_pisma) REFERENCES Pismo(id_pisma),
 CONSTRAINT sprzedaz_salon_fk FOREIGN KEY(id_salonu) REFERENCES Salon(id_salonu),
 CONSTRAINT sprzedaz_dzien_fk FOREIGN KEY(id_dnia) REFERENCES Dzien(id_dnia),
 CONSTRAINT sprzedaz_sprzedawca_fk FOREIGN KEY(id_sprzedawcy) REFERENCES Sprzedawca(id_sprzedawcy),
-CONSTRAINT sprzedaz_paragon_fk FOREIGN KEY(id_paragonu) REFERENCES Paragon(id_paragonu)
-
+CONSTRAINT sprzedaz_paragon_fk FOREIGN KEY(id_paragonu) REFERENCES Paragony(id_paragonu)
 );
+
+
+
+SELECT * FROM paragony;
+SELECT * FROM platnosci;
+SELECT * FROM pismo;
+SELECT * FROM tematyka;
+SELECT * FROM salon;
+SELECT * FROM miasto;
+SELECT * FROM dzien;
+SELECT * FROM miesiac;
+SELECT * FROM rok;
+SELECT * FROM sprzedawca;
+
+SELECT * FROM sprzedaz;
+SELECT Count(*) FROM sprzedaz;
 
