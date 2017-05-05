@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 11.2.0.2.0 - Production on Pt Kwi 21 21:22:31 2017
+SQL*Loader: Release 11.2.0.2.0 - Production on Pt Maj 5 20:11:46 2017
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
@@ -30,10 +30,13 @@ ID_SPRZEDAWCY                        NEXT     *   ,       CHARACTER
 ID_PARAGONU                          NEXT     *   ,       CHARACTER            
 SUMA_ZYSKU                           NEXT     *   ,       CHARACTER            
 
+Record 12769: Rejected - Error on table SPRZEDAZ.
+ORA-02291: integrity constraint (SYSTEM.SPRZEDAZ_DZIEN_FK) violated - parent key not found
+
 
 Table SPRZEDAZ:
-  10080 Rows successfully loaded.
-  0 Rows not loaded due to data errors.
+  12769 Rows successfully loaded.
+  1 Row not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
 
@@ -42,12 +45,12 @@ Space allocated for bind array:                 115584 bytes(64 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          0
-Total logical records read:         10080
-Total logical records rejected:         0
+Total logical records read:         12770
+Total logical records rejected:         1
 Total logical records discarded:        0
 
-Run began on Pt Kwi 21 21:22:31 2017
-Run ended on Pt Kwi 21 21:22:31 2017
+Run began on Pt Maj 05 20:11:46 2017
+Run ended on Pt Maj 05 20:11:46 2017
 
-Elapsed time was:     00:00:00.25
-CPU time was:         00:00:00.05
+Elapsed time was:     00:00:00.28
+CPU time was:         00:00:00.03

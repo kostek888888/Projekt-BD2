@@ -336,13 +336,17 @@ int generuj_paragony(int ile_paragonow, int l_platnosci)
     return ile_paragonow;
 }
 
+
 unsigned int generuj_sprzedaz(unsigned int l_pism, unsigned int l_salonow, unsigned int l_dni, int l_paragonow, unsigned int l_sprzedawcow)
 {
+
     string sciezka = pobierz_sciezke() + "sprzedaz.csv";
     fstream fplik;
     int id=1;
     unsigned int i=1;
     int j=1;
+    int id_sprzed = 13;
+    int id_salonu = 1;
 
     unsigned int id_sprzedazy;
     fplik.open(sciezka.c_str(),ios::in | ios::out | ios::trunc);
@@ -352,29 +356,61 @@ unsigned int generuj_sprzedaz(unsigned int l_pism, unsigned int l_salonow, unsig
        {
            for(j=1; j<=l_dni; j++)
            {
-               int id_pisma = (rand()%l_pism)+1;
-
                fplik << id++ << ","; ///id_sprzedazy
-               fplik << id_pisma << ","; ///id pisma
-               fplik << i << ",";   ///id_salonu
+               fplik << (rand()%l_pism)+1 << ","; ///id pisma
+
+               if(id_salonu>l_salonow)
+                id_salonu=1;
+               fplik << id_salonu<< ",";   ///id_salonu kazdy salon ma jednego unikalnego sprzedawce
+
+
                fplik << j << ",";   ///id_czasu
-               fplik << (rand()%l_sprzedawcow)+1 << ","; /// id_sprzedawcy
+
+
+               if(id_sprzed > l_sprzedawcow)    ///sprzedawcy od id = 13 to ci co nadal pracuja
+                 id_sprzed=13;
+               fplik << id_sprzed << ","; /// id_sprzedawcy
+
+
                fplik << (rand()%l_paragonow)+1 << ","; /// id_paragonu
 
                ///suma zysku
                ///tu poki co jakas wartosc na lewo, ale przydaloby sie wejsc do pliku pismo.csv i odczytac cene pisma o podanym id
                fplik << ((rand()%36)+9) << ","; /// suma_zysku
 
-
-
            fplik << endl;
 
+
            }
+                id_sprzed++;
+                 id_salonu++;
         }
+
+        ///dane specjalnie dla sprzedawcy o id 51 i salonie 1
+               fplik << id++ << ","; ///id_sprzedazy
+               fplik << (rand()%l_pism)+1 << ","; ///id pisma
+               fplik << 1 << ",";   ///id_salonu kazdy salon ma jednego unikalnego sprzedawce
+               fplik << j << ",";   ///id_czasu
+               fplik << 51 << ","; /// id_sprzedawcy
+               fplik << (rand()%l_paragonow)+1 << ","; /// id_paragonu
+               fplik << ((rand()%36)+9) << ","; /// suma_zysku
+
+               fplik << endl;
+
+               fplik << id++ << ","; ///id_sprzedazy
+               fplik << (rand()%l_pism)+1 << ","; ///id pisma
+               fplik << 1 << ",";   ///id_salonu kazdy salon ma jednego unikalnego sprzedawce
+               fplik << j-1 << ",";   ///id_czasu
+               fplik << 51 << ","; /// id_sprzedawcy
+               fplik << (rand()%l_paragonow)+1 << ","; /// id_paragonu
+               fplik << ((rand()%36)+9) << ","; /// suma_zysku
+
+
+
        cout << "Dane wygenerowane do pliku " << sciezka.c_str() << endl;
        fplik.close();
     }
-    return i*j;
+    return i+2*j;
 }
 
 void sprawdzenie_czy_pliki_zamkniete()
@@ -404,7 +440,7 @@ int main()
 
     cout << "dane beda zapisywane w " << pobierz_sciezke() << endl << endl;
 
-    int ile_sprzedawcow = 50;
+    int ile_sprzedawcow = 51;
     int ile_zwolnionych_sprz = ile_sprzedawcow/4;
     generuj_sprzedawcow(ile_sprzedawcow,ile_zwolnionych_sprz);
 
@@ -415,7 +451,7 @@ int main()
 
     int l_miast = 10;
     generuj_miasto(l_miast);
-    int l_salonow = 30;
+    int l_salonow = 38;
     generuj_salony(l_salonow,10);
 
     unsigned int l_pism = 20;
@@ -428,7 +464,7 @@ int main()
 
     unsigned int ile = generuj_sprzedaz(l_pism,l_salonow,ile_dni,l_paragonow,ile_sprzedawcow);
 
-    cout << endl << endl << "w tabeli faktow jest " <<  ile << " wpisow" << endl << "gotowe" << endl;
+    cout << endl << "gotowe" << endl;
 
    return 0;
 }

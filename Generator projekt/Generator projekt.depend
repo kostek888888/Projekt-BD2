@@ -14,7 +14,7 @@
 	<cstdlib>
 	<sstream>
 
-1492795095 source:c:\users\wojciech\documents\github\projekt-bd2\generator projekt\main.cpp
+1494011463 source:c:\users\wojciech\documents\github\projekt-bd2\generator projekt\main.cpp
 	<iostream>
 	"generate_lib.h"
 	<fstream>

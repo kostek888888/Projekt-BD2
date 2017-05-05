@@ -1,9 +1,3 @@
-@color d
-@echo przy kazdym zaladowaniu nowych plikow najlepiej jest sobie wyczyscic baze czyli odpalic calego create'a w sqltools
-@echo to usunie wszystkie wpisy
-
-
-
 @echo podaj login do bazy
 @set /p login=">> "
 
