@@ -5,11 +5,12 @@ SELECT Nvl(To_Char(id_salonu),'Wszystkie salony') AS id_salonu,
 FROM sprzedaz
 GROUP BY rollup (id_salonu, id_pisma);
 
---ile klientow bylo obsluzonych w danym salonie
+--ile klientow bylo obsluzonych w danym salonie przez jakiego sprzedawce, ogolem w salonie, ogolem obsluzonych klientow
 SELECT  Nvl(To_Char(id_salonu),'Wszystkie salony') AS id_salonu,
+			   Nvl(To_Char(id_sprzedawcy),'Sprzedawcy') AS id_sprzedawcy,
        Count(id_paragonu) AS liczba_obsluzonych_klientow
 FROM sprzedaz
-GROUP BY rollup (id_salonu);
+GROUP BY rollup (id_salonu,id_sprzedawcy);
 
 
 --2) cube ile pism sprzedal sprzedawca w danym salonie
