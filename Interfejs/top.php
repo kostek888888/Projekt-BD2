@@ -9,8 +9,16 @@
 
                 <!-- Latest compiled and minified JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                <style>
+                    .auto-generated td, th {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+                </style>
+                
+                
                 </head>
-                <body>
+    <body>
 
 
     <div class="container-fluid">
@@ -18,16 +26,16 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="selectTable.php?table=Sprzedaz">Tabela Sprzedaz</a></li>
-            <li><a href="#">Tabela Paragony</a></li> 
-            <li><a href="#">Tabela Platnosci</a></li>
-            <li><a href="#">Tabela Pismo</a></li>
-            <li><a href="#">Tabela Tematyka</a></li>
-            <li><a href="#">Tabela Salon</a></li>
-            <li><a href="#">Tabela Miasto</a></li>
-            <li><a href="#">Tabela Dzien</a></li>
-            <li><a href="#">Tabela Miesiac</a></li>
-            <li><a href="#">Tabela Rok</a></li>
-            <li><a href="#">Tabela Sprzedawca</a></li>
+            <li><a href="selectTable.php?table=Paragony">Tabela Paragony</a></li> 
+            <li><a href="selectTable.php?table=Platnosci">Tabela Platnosci</a></li>
+            <li><a href="selectTable.php?table=Pismo">Tabela Pismo</a></li>
+            <li><a href="selectTable.php?table=Tematyka">Tabela Tematyka</a></li>
+            <li><a href="selectTable.php?table=Salon">Tabela Salon</a></li>
+            <li><a href="selectTable.php?table=Miasto">Tabela Miasto</a></li>
+            <li><a href="selectTable.php?table=Dzien">Tabela Dzien</a></li>
+            <li><a href="selectTable.php?table=Miesiac">Tabela Miesiac</a></li>
+            <li><a href="selectTable.php?table=Rok">Tabela Rok</a></li>
+            <li><a href="selectTable.php?table=Sprzedawca">Tabela Sprzedawca</a></li>
           </ul>
         </div>
         <div class="col-sm-9 main">

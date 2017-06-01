@@ -49,6 +49,14 @@ $col = array(
         'naklad',
         'cena'
     ),
+    'Pismo' => array(
+        'id_pisma',
+        'id_tematyki',
+        'okres_wydawania',
+        'nazwa',
+        'naklad',
+        'cena',
+    ),
     'Platnosci' => array(
         'id_platnosci',
         'nazwa',
