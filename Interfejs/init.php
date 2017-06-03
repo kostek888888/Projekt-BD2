@@ -21,3 +21,10 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+function displaySql($sql, $opis) {
+    echo "<p>";
+    echo "<b>SQL: </b>";
+    echo nl2br($sql);
+    echo "</p>";
+}

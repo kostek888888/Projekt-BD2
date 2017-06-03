@@ -36,6 +36,16 @@
             <li><a href="selectTable.php?table=Miesiac">Tabela Miesiac</a></li>
             <li><a href="selectTable.php?table=Rok">Tabela Rok</a></li>
             <li><a href="selectTable.php?table=Sprzedawca">Tabela Sprzedawca</a></li>
+            <li><a href="1rollup.php">ROLLUP</a></li>
+            <li><a href="2rollup.php">ROLLU2</a></li>
+            <li><a href="1cube.php">cube1</a></li>
+            <li><a href="2cube.php">cube2</a></li>
+            <li><a href="1grouping.php">1grouping</a></li>
+            <li><a href="2grouping.php">2grouping</a></li>
+            <li><a href="1partycje.php">1partycje</a></li>
+            <li><a href="2partycje.php">2partycje</a></li>
+            <li><a href="1ranking.php">1ranking</a></li>
+            <li><a href="2ranking.php">2ranking</a></li>
           </ul>
         </div>
         <div class="col-sm-9 main">
