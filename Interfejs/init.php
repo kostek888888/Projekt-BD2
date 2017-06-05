@@ -23,8 +23,11 @@ try {
 }
 
 function displaySql($sql, $opis) {
+    echo "<p>$opis</p>";
     echo "<p>";
     echo "<b>SQL: </b>";
     echo nl2br($sql);
     echo "</p>";
 }
+
+

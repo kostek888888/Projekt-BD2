@@ -253,10 +253,10 @@ function maketable(
 	// Add column headers if required
 	if( $column_headers != null )
 	{
-		if( $column_footers )
-		{
+		//if( $column_footers )
+		//{
 			$table .= $first_indent . $indent . '<thead>' . "\r\n";
-		}
+		//}
 		$table .= $row_indent . '<tr>' . "\r\n";
 		for( $col = 0; $col < $column_count; $col++ )
 		{
@@ -272,10 +272,10 @@ function maketable(
 			$table .= '>' . htmlspecialchars( $column_headers[ $col ] ) . '</th>' . "\r\n";
 		}
 		$table .= $row_indent . '</tr>' . "\r\n";
-		if( $column_footers )
-		{
+		//if( $column_footers )
+		//{
 			$table .= $first_indent . $indent . '</thead>' . "\r\n";
-		}
+		//}
 	}
 
 

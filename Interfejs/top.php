@@ -6,14 +6,33 @@
 
             <!-- Optional theme -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <!-- Latest compiled and minified JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
                 <style>
                     .auto-generated td, th {
                         padding-left: 8px;
                         padding-right: 8px;
+                        border: 1px solid #999;
                     }
+                    th.headerSortUp { 
+                        background-image: url(/sort/img/small_asc.gif); 
+                        background-color: #3399FF; 
+                    } 
+                    th.headerSortDown { 
+                        background-image: url(/img/small_desc.gif); 
+                        background-color: #3399FF; 
+                    } 
+                    th.header { 
+                        background-image: url(../img/small.gif); 
+                        cursor: pointer; 
+                        font-weight: bold; 
+                        background-repeat: no-repeat; 
+                        background-position: center left; 
+                        padding-left: 20px; 
+                        border-right: 1px solid #dad9c7; 
+                        margin-left: -1px; 
+                    } 
                 </style>
                 
                 
@@ -36,8 +55,8 @@
             <li><a href="selectTable.php?table=Miesiac">Tabela Miesiac</a></li>
             <li><a href="selectTable.php?table=Rok">Tabela Rok</a></li>
             <li><a href="selectTable.php?table=Sprzedawca">Tabela Sprzedawca</a></li>
-            <li><a href="1rollup.php">ROLLUP</a></li>
-            <li><a href="2rollup.php">ROLLU2</a></li>
+            <li><a href="1rollup.php">rollup1</a></li>
+            <li><a href="2rollup.php">rollup2</a></li>
             <li><a href="1cube.php">cube1</a></li>
             <li><a href="2cube.php">cube2</a></li>
             <li><a href="1grouping.php">1grouping</a></li>

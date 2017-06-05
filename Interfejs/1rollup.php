@@ -3,19 +3,19 @@
 
 
 <?php
-$sql = "SELECT  Nvl(To_Char(id_salonu),'Wszystkie salony') AS id_salonu,
-			   Nvl(To_Char(id_sprzedawcy),'Sprzedawcy') AS id_sprzedawcy,
-       Count(id_paragonu) AS liczba_obsluzonych_klientow
+$sql = "SELECT Nvl(To_Char(id_salonu),'Wszystkie salony') AS id_salonu,
+       Nvl(To_Char(id_pisma),'Ogolem pism') AS id_pisma,
+       Count(id_pisma) AS liczba_sprzedanych
 FROM sprzedaz
-GROUP BY rollup (id_salonu,id_sprzedawcy)";
+GROUP BY rollup (id_salonu, id_pisma)";
 
 $colNames = array(
     'id_salonu',
-    'id_sprzedawcy',
-    'liczba_obsłużonych_klientów'
+    'id_pisma',
+    'liczba_sprzedanych'
 );
 
-$opis = 'cube ile pism sprzedal sprzedawca w danym salonie';
+$opis = 'ROLLUP ile kazdego z pism zostalo sprzedanych w danym salonie, ile ogolem pismy bylo sprzedanych w danym salonie, ile pism zostalo sprzedanych we wszystkich salonach';
 
 displaySql($sql, $opis);
 echo maketable($dbh->query($sql), $colNames);

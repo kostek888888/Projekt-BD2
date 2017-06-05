@@ -42,12 +42,9 @@ $col = array(
         'obrot_miesieczny',
     ),
     'Tematyka' => array(
-        'id_pisma',
         'id_tematyki',
-        'okres_wydawania',
         'nazwa',
-        'naklad',
-        'cena'
+        'opis',
     ),
     'Pismo' => array(
         'id_pisma',
