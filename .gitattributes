@@ -17,5 +17,4 @@
 *.RTF	 diff=astextplain
 
 
-* linguist-vendored
-*.sql linguist-vendored=false
+* linguist-language=SQL
