@@ -16,20 +16,20 @@
                         border: 1px solid #999;
                     }
                     th.headerSortUp { 
-                        background-image: url(/sort/img/small_asc.gif); 
-                        background-color: #3399FF; 
+                        background-image: url(img/small_asc.gif) !important; 
+                        background-color: #3399FF;                    
                     } 
                     th.headerSortDown { 
-                        background-image: url(/img/small_desc.gif); 
+                        background-image: url(img/small_desc.gif) !important; 
                         background-color: #3399FF; 
                     } 
                     th.header { 
-                        background-image: url(../img/small.gif); 
+                        background-image: url(img/small_bg.gif);
                         cursor: pointer; 
                         font-weight: bold; 
                         background-repeat: no-repeat; 
-                        background-position: center left; 
-                        padding-left: 20px; 
+                        background-position: center right; 
+                        padding-right: 20px; 
                         border-right: 1px solid #dad9c7; 
                         margin-left: -1px; 
                     } 
