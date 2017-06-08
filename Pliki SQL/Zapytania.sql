@@ -7,26 +7,36 @@ GROUP BY rollup (id_salonu, id_pisma);
 
 --ile klientow bylo obsluzonych w danym salonie przez jakiego sprzedawce, ogolem w salonie, ogolem obsluzonych klientow
 SELECT  Nvl(To_Char(id_salonu),'Wszystkie salony') AS id_salonu,
-			   Nvl(To_Char(id_sprzedawcy),'Sprzedawcy') AS id_sprzedawcy,
+			  Nvl(To_Char(id_sprzedawcy),'Sprzedawcy') AS id_sprzedawcy_w_salonie,
        Count(id_paragonu) AS liczba_obsluzonych_klientow
 FROM sprzedaz
 GROUP BY rollup (id_salonu,id_sprzedawcy);
 
 
 --2) cube ile pism sprzedal sprzedawca w danym salonie
+<<<<<<< HEAD
+SELECT  Nvl(To_Char(id_salonu),'salon') AS id_salonu,
+        Nvl(To_Char(id_sprzedawcy),'sprzedawcy') AS id_sprzedawcy,
+        Nvl(To_Char( id_pisma),'pism') AS  id_pisma,
+        Count(id_pisma) AS ilosc_sprzedanych FROM sprzedaz
+GROUP BY cube(id_salonu,id_sprzedawcy,id_pisma)
+ORDER BY id_salonu,id_sprzedawcy,id_pisma asc;
+=======
 SELECT id_salonu, 
    Nvl(To_Char(id_sprzedawcy),'Wszyscy sprzedawcy') AS id_sprzedawcy,
    Nvl(To_Char(id_pisma),'Wszystkie pisma') AS wszystkie_pisma,
    Count(id_pisma) AS ilosc_sprzedanych FROM sprzedaz
   GROUP BY cube(id_salonu,id_sprzedawcy,id_pisma)
   ORDER BY id_salonu;
+>>>>>>> origin/master
 
 ---ile sprzedawca zarobil dla firmy na poszczegolnym pismie, ile zarobil na wszystkich pismach, ile wszyscy sprzedawcy zarobili na danym pismie i ogolny zarobek wszystkich sprzedawcow na wszystkich pismach
 SELECT Nvl(To_Char(id_sprzedawcy),'Wszystkie sprzedawcy') AS id_sprzedawcy,
-       Nvl(To_Char(id_pisma),'Ogolem pisma lub pism') AS id_pisma,
+       Nvl(To_Char(id_dnia),'w miesiacu') AS id_dnia,
        Sum(suma_zysku) AS suma_zysku FROM sprzedaz
-GROUP BY cube(id_sprzedawcy,id_pisma)
-ORDER BY id_sprzedawcy, id_pisma desc;
+GROUP BY cube(id_sprzedawcy,id_dnia)
+HAVING id_dnia<=28;
+ORDER BY id_sprzedawcy, id_dnia asc;
 
 
 --3) grouping sets: liczba sprzedanych gazet we wszystkich salonach danego dnia, ogolem sprzedanych gazet, a potem sprzedanych gazet danego dnia w danym salonie
