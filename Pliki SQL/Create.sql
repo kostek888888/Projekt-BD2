@@ -110,20 +110,3 @@ CONSTRAINT sprzedaz_dzien_fk FOREIGN KEY(id_dnia) REFERENCES Dzien(id_dnia),
 CONSTRAINT sprzedaz_sprzedawca_fk FOREIGN KEY(id_sprzedawcy) REFERENCES Sprzedawca(id_sprzedawcy),
 CONSTRAINT sprzedaz_paragon_fk FOREIGN KEY(id_paragonu) REFERENCES Paragony(id_paragonu)
 );
-
-
-
-SELECT * FROM paragony;
-SELECT * FROM platnosci;
-SELECT * FROM pismo;
-SELECT * FROM tematyka;
-SELECT * FROM salon;
-SELECT * FROM miasto;
-SELECT * FROM dzien;
-SELECT * FROM miesiac;
-SELECT * FROM rok;
-SELECT * FROM sprzedawca;
-
-SELECT * FROM sprzedaz;
-SELECT Count(*) FROM sprzedaz;
-
